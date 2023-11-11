@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Plotter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #map {
+            width: 2184px; /* Adjust to the width of your map image */
+            height: 1200px; /* Adjust to the height of your map image */
+            position: relative;
+            background-image: url('./assets/Finished\ Map.svg'); /* Put the path of your map image here */
+            background-size: cover;
+            margin: 0 auto;
+        }
+        .marker {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Map Plotter</h1>
+    <div id="map"></div>
+    <input type="text" id="latitude" placeholder="Latitude">
+    <input type="text" id="longitude" placeholder="Longitude">
+    <button onclick="plotPoint()">Submit</button>
+
+    <script src="./assets/scripts.js"></script>
+</body>
+</html>
