@@ -4,10 +4,10 @@ body {
 }
 
 #map {
-    width: 2184px; 
-    height: 1200px; 
+    width: 1650px; 
+    height: 895px; 
     position: relative;
-    background-image: url('./Map.svg'); 
+    background-image: url('./Stretched\ Map.svg'); 
     background-size: cover;
     margin: 0 auto;
 }
@@ -23,8 +23,8 @@ body {
 }
 
 .marker {
-    width: 70px; /* Updated for 40px diameter */
-    height: 70px; /* Updated for 40px diameter */
+    width: 40px; /* Updated for 40px diameter */
+    height: 40px; /* Updated for 40px diameter */
     background-color: rgb(128, 0, 77);
     opacity: 0.75; /* Set to 75% opacity */
     position: absolute;
@@ -37,7 +37,7 @@ body {
 }
 
 .marker-text {
-    color: white;
+    color: black;
 }
 
 .grid-line {
