@@ -7,7 +7,7 @@ body {
     width: 1650px; 
     height: 895px; 
     position: relative;
-    background-image: url('./Stretched\ Map.svg'); 
+    background-image: url('./Images/IMLC-Map.svg'); 
     background-size: cover;
     margin: 0 auto;
 }
@@ -19,12 +19,12 @@ body {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
-    background-size: 218.4px 120px; /* Adjust these values to change the grid size */
+    background-size: 218.4px 120px; 
 }
 
 .marker {
-    width: 40px; /* Updated for 40px diameter */
-    height: 40px; /* Updated for 40px diameter */
+    width: 40px; 
+    height: 40px; 
     background-color: rgb(128, 0, 77);
     opacity: 0.75; /* Set to 75% opacity */
     position: absolute;
@@ -37,7 +37,7 @@ body {
 }
 
 .marker-text {
-    color: black;
+    color: white;
 }
 
 .grid-line {

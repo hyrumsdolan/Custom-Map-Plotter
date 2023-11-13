@@ -9,12 +9,19 @@
 <body>
     <h1>Map Plotter</h1>
     <div id="map"></div>
-    <form id="mapForm">
-        <input type="text" id="latitude" placeholder="Latitude">
-        <input type="text" id="longitude" placeholder="Longitude">
-        <button type="submit">Submit</button>
-    </form>
-    
-    <script src="./assets/scripts.js"></script>
+    <input type="text" id="city" placeholder="City">
+<input type="text" id="state" placeholder="State">
+<form id="mapForm">
+    <button type="submit">Plot Point</button>
+</form>
+
+<div id="dropZone" style="border: 2px dashed #ccc; padding: 20px; text-align: center;">
+    Drag and drop your CSV file here, or click to select a file.
+    <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <script type= "module" src="./assets/JS/scripts.js"></script>
 </body>
 </html>
