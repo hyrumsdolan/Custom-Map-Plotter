@@ -1,57 +1,107 @@
+/* Global styles */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
 }
 
+/* Map styles */
 #map {
-    width: 1650px; 
-    height: 895px; 
     position: relative;
     background-image: url('./Images/IMLC-Map.svg'); 
     background-size: cover;
     margin: 0 auto;
 }
 
-.grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
-    background-size: 218.4px 120px; 
-}
-
+/* Marker styles */
 .marker {
-    width: 40px; 
-    height: 40px; 
-    background-color: rgb(128, 0, 77);
-    opacity: 0.75; /* Set to 75% opacity */
+    background-color:#cce5ff;
+    opacity: .7; 
+    border-radius: 50%; /* Circular shape */
     position: absolute;
-    border-radius: 50%; /* Makes the div circular */
-    display: flex; /* Enables flexbox for centering inner content */
-    justify-content: center; /* Horizontally centers the child text */
-    align-items: center; /* Vertically centers the child text */
-    color: white; /* Text color, change as needed */
-    font-size: 12px; /* Adjust the font size as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    border: 3px solid black; /* White border for contrast */
+    box-shadow: 0 0 8px rgba(0,0,0,0.3); /* Soft shadow for depth */
 }
 
 .marker-text {
+    color: black;
+    font-weight: 900;
+}
+
+
+/* Form styles */
+input[type="text"] {
+    padding: 10px;;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
     color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.grid-line {
+button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Drop zone styles */
+#dropZone {
+    border: 2px dashed #007bff; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 40px;
+    text-align: center;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #495057; /* Dark text for contrast */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative; /* For positioning inner elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dropZone:hover {
+    background-color: #e2e6ea; /* Slightly darker on hover */
+    border-color: #0056b3; /* Darker border on hover */
+}
+
+#dropZone.dragover {
+    background-color: #cce5ff; /* Light blue when dragging over */
+    border-color: #007bff; /* Blue border on drag over */
+}
+
+#dropZone p {
+    margin: 10px 0 0;
+    color: #6c757d; /* Subtle text color */
+}
+
+#dropZone::before {
+    content: ''; /* File folder emoji as icon */
+    font-size: 48px; /* Large icon size */
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.5); 
+    top: 20px;
 }
 
-.horizontal {
-    width: 100%;
-    height: 1px; 
-}
-
-.vertical {
-    height: 100%;
-    width: 1px; 
+#csvFileInput {
+    display: none; /* Hide the actual file input */
 }
 

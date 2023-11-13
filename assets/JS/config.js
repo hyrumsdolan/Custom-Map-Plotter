@@ -12,7 +12,7 @@ const mapConfig = {
 };
 
 // Market size
-const markerDiameter = 40
+const markerDiameter = 60
 const markerConfig = {
     size: { width: markerDiameter, height: markerDiameter },
     adjustment: markerDiameter/2
