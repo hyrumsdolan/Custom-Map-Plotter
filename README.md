@@ -33,18 +33,9 @@ I needed this for batches of 30-50 - this option is free, but may have some limi
 
 ## Current Known Issues
 
-### Don't change the marker diameter
-
-I got a weird bug that popped up, but it was after I calibrated the plot points. It's probably an easy fix and I will hopefully get to it soon.
+### No apparent bugs
 
 ## Desired Next Steps
 
-### 1. Make it look nicer
+### 1. Size slider and color editor for marker
 
-Add a cute little drag and drop box or something, maybe have a dark mode.
-
-### 2. Export Image
-
-Right now you just need to screen shot the map, but it'd be export directly into an email friendly filetype.
-
-### 3. Size slider and color editor for marker
