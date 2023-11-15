@@ -113,7 +113,7 @@ function processLocations(locations) {
 
 
 function getCoordinates(city, state) {
-  const apiKey = 'GOOGLE_API_KEY'; // Replace with your Google Geocoding API key
+  const apiKey = document.getElementById('apiToken').value.trim(); // Replace with your Google Geocoding API key
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city},${state}&key=${apiKey}`;
 
   fetch(url)
