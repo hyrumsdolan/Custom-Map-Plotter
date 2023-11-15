@@ -102,32 +102,57 @@ function processLocations(locations) {
   for (const location of locations) {
     const city = location.City; // Adjust these according to your CSV column names
     const state = location.State;
+    if (!city || !state) {
+      console.error("Missing City or State");
+      continue;
+    }
     getCoordinates(city, state);
   }
 }
 // END CSV HANDLER
 
 
-// Gets Latitude and Longitude from OpenStreetMap API
 function getCoordinates(city, state) {
-  // Find the matching entry in the JSON data
-  const location = jsonData.find(entry => 
-    entry.CITY.toLowerCase() === city.toLowerCase() && 
-    (entry.STATE_NAME.toLowerCase() === state.toLowerCase() || 
-     entry.STATE_CODE.toLowerCase() === state.toLowerCase()));
-  console.log(location);
-  
-  if (location) {
-    // Extract latitude and longitude
-    const latitude = parseFloat(location.LATITUDE);
-    const longitude = parseFloat(location.LONGITUDE);
+  const apiKey = 'GOOGLE_API_KEY'; // Replace with your Google Geocoding API key
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city},${state}&key=${apiKey}`;
 
-    // Continue with your existing logic to add markers
-    addMarker(latitude, longitude, state);
-  } else {
-    console.error("No coordinates found for this location");
-  }
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'OK') {
+        const latitude = data.results[0].geometry.location.lat;
+        const longitude = data.results[0].geometry.location.lng;
+        console.log(`${state}, ${city}Latitude: ${latitude}, Longitude: ${longitude}`);
+        addMarker(latitude, longitude, state);
+      } else {
+        console.log(`${state}, ${city}`)
+        console.error("Geocoding failed:", data.status);
+      }
+    })
+    .catch(error => console.error("Error fetching coordinates:", error));
 }
+
+
+// Gets Latitude and Longitude from OpenStreetMap API
+// function getCoordinates(city, state) {
+//   // Find the matching entry in the JSON data
+//   const location = jsonData.find(entry => 
+//     entry.CITY.toLowerCase() === city.toLowerCase() && 
+//     (entry.STATE_NAME.toLowerCase() === state.toLowerCase() || 
+//      entry.STATE_CODE.toLowerCase() === state.toLowerCase()));
+//   console.log(location);
+  
+//   if (location) {
+//     // Extract latitude and longitude
+//     const latitude = parseFloat(location.LATITUDE);
+//     const longitude = parseFloat(location.LONGITUDE);
+
+//     // Continue with your existing logic to add markers
+//     addMarker(latitude, longitude, state);
+//   } else {
+//     console.error("No coordinates found for this location");
+//   }
+// }
 
 // THIS WORKS AND IS WORTH TRYING - I think I messed up the usage rules for the API and got blocked. But it is more robust (Knows LA, CA is Los Angeles), but it is slower (1 point per second)
 // Gets Latitude and Longitude from OpenStreetMap API
