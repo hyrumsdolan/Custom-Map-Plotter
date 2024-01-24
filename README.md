@@ -7,21 +7,21 @@ Can plot multiple points at once on a custom map of the US with a CSV file.
 https://hyrumsdolan.github.io/Custom-Map-Plotter/
 
 ## How to Use
-Go to this URL: https://console.cloud.google.com/google/maps-apis/credentials
-Sign in to Google Account
-Agree to the TOS
-Click CREATE PROJECT (the URL should have taken you to Key & Credentials tab)
-Click Create
-Click Keys and Credentials
-It will ask for credit card (It will not charge you unless you do more than, I thik 100,000 plots per month, maybe even more. It also won't charge without direct permission)
-Go back to Keys and Crendtials
-Create API Key
-Copy the API Key
-Go to https://hyrumsdolan.github.io/Custom-Map-Plotter/
-Paste that into the bottom where it asks for the API KEY
-Drop a CSV that has a column labeled State, and another with City
-It will auto plot everything.
-Click export to save a picture of the map with the plots
+- Go to this URL: https://console.cloud.google.com/google/maps-apis/credentials
+- Sign in to Google Account
+- Agree to the TOS
+- Click CREATE PROJECT (the URL should have taken you to Key & Credentials tab)
+- Click Create
+- Click Keys and Credentials
+- It will ask for credit card (It will not charge you unless you do more than, I thik 100,000 plots per month, maybe even more. It also won't charge without direct permission)
+- Go back to Keys and Crendtials
+- Create API Key
+- Copy the API Key
+- Go to https://hyrumsdolan.github.io/Custom-Map-Plotter/
+- Paste that into the bottom where it asks for the API KEY
+- Drop a CSV that has a column labeled State, and another with City
+- It will auto plot everything.
+- Click export to save a picture of the map with the plots
 
 
 
