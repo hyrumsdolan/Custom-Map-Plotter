@@ -6,9 +6,30 @@ Can plot multiple points at once on a custom map of the US with a CSV file.
 
 https://hyrumsdolan.github.io/Custom-Map-Plotter/
 
+## How to Use
+Go to this URL: https://console.cloud.google.com/google/maps-apis/credentials
+Sign in to Google Account
+Agree to the TOS
+Click CREATE PROJECT (the URL should have taken you to Key & Credentials tab)
+Click Create
+Click Keys and Credentials
+It will ask for credit card (It will not charge you unless you do more than, I thik 100,000 plots per month, maybe even more. It also won't charge without direct permission)
+Go back to Keys and Crendtials
+Create API Key
+Copy the API Key
+Go to https://hyrumsdolan.github.io/Custom-Map-Plotter/
+Paste that into the bottom where it asks for the API KEY
+Drop a CSV that has a column labeled State, and another with City
+It will auto plot everything.
+Click export to save a picture of the map with the plots
+
+
+
 ## Resources
 
 ### Map Source
+
+If you would like to customize the map, take this map and then use the SVG editor to edit the colors to your liking. Replace the IMLC-Map.svg in /assets/images/ (must be named exactly the same)
 
 [https://mapsvg.com/maps/usa](https://mapsvg.com/maps/usa)
 
@@ -28,23 +49,8 @@ This one worked out really well for me. The only issue I had was text size (for 
 
 ## Current Known Issues
 
-### Not tested fully yet, but I assume my JSON may be missing some possible spellings of cities and may cause issues.
+
 
 ## Desired Next Steps
 
 ### 1. Size slider and color editor for marker
-
-
-
-
-
-
-## API - DEPRECATED *
-
-[https://www.openstreetmap.org/](https://www.openstreetmap.org/)
-
-No API token required.
-
-I needed this for batches of 30-50 - this option is free, but may have some limitations for bigger datasets.
-
-Deprecation Note* I got blocked from the API, I think from reusing the same test file multiple times. I replaced this with a JSON which is much faster, but less robust if your City, State isn't already standardized.
